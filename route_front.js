@@ -3,6 +3,10 @@ $.get("http://localhost:3000/", function (res) {
   make_item(db);
 });
 
+$.get("http://localhost:3000/GOTM", function (res) {
+  var db = res;
+  make_item(db);
+});
 $.get("http://localhost:3000/categories", function (res) {
   var db = res;
   make_item(db);
