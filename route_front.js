@@ -38,9 +38,6 @@ $.get("http://localhost:3000/FPS", function (res) {
   make_item(db);
 });
 
-// j'aurai pas le temps de faire la navbar qui slide du coup j'ai une idee pour remplacer 
-// on clique sur game et apres on affiche toutes les categories en haut et a la suite tout les jeux saffiche 
-// quand on clique sur une categorie sa laisse uniquement les jeux de la categorie 
 
 
 // $.get("http://localhost:3000/", function (res) {

@@ -23,11 +23,11 @@ db.serialize(() => {
   // Habib: J'ai ajouté les mock-datas de Tatiana dans la base de données pour conserver le même modèle qu'elle a utilisé en front
 
   db.run(
-    "CREATE TABLE IF NOT EXISTS games (game_id INTEGER PRIMARY KEY AUTOINCREMENT, game_name VARCHAR(50) UNIQUE, game_img VARCHAR(200), game_resume VARCHAR(500), game_commentary VARCHAR(300), game_note INTEGER , category_name, FOREIGN KEY (category_name) REFERENCES categories(category_name), gotm INTEGER)"
+    "CREATE TABLE IF NOT EXISTS games (game_id INTEGER PRIMARY KEY AUTOINCREMENT, game_name VARCHAR(50) UNIQUE, game_img VARCHAR(200), game_resume VARCHAR(500), game_commentary VARCHAR(300), game_note INTEGER , category_name, FOREIGN KEY (category_name) REFERENCES categories(category_name))"
   );
 
   db.run(
-    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name, gotm) VALUES (?,?,?,?,?,?,?)",
+    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name) VALUES (?,?,?,?,?,?)",
     "Super Smash Bros : Ultimate",
     "images/SSBU.png",
     "Super Smash Bros Ultimate is a Fighting game on Switch. This Ultimate opus brings together all the fighters already appeared in the history of Super Smash Bros. 75 playable characters will be available by counting the trainer, as well as all his Pokémon...",
@@ -38,7 +38,7 @@ db.serialize(() => {
   );
 
   db.run(
-    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name, gotm) VALUES (?,?,?,?,?,?,?)",
+    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name, gotm) VALUES (?,?,?,?,?,?)",
     "The Last of Us",
     "images/TLOU.jpg",
     "The survival action The Last of Us on PS3 follows Joel and Ellie across the United States. The two will have to help each other to survive a mysterious plague. Nature begins to appropriate the abandoned cities and the few survivors kill each other to recover the little food and weapons still present.",
@@ -49,7 +49,7 @@ db.serialize(() => {
   );
 
   db.run(
-    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name, gotm) VALUES (?,?,?,?,?,?,?)",
+    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name) VALUES (?,?,?,?,?,?)",
     "League of Legends",
     "images/LOL.jpg",
     "League of Legends is a MOBA, a multiplayer online battle arena. In the classic mode, two teams of five players compete in games that last on average between 40 minutes and the goal is to destroy the enemy base. Playing in a hero-fantasy universe, each player embodies a different champion, with unique abilities, which he chooses at the beginning of the game. Random modes are also present, as well as seasonal events that bring a breath of novelty.",
