@@ -23,37 +23,40 @@ db.serialize(() => {
   // Habib: J'ai ajouté les mock-datas de Tatiana dans la base de données pour conserver le même modèle qu'elle a utilisé en front
 
   db.run(
-    "CREATE TABLE IF NOT EXISTS games (game_id INTEGER PRIMARY KEY AUTOINCREMENT, game_name VARCHAR(50) UNIQUE, game_img VARCHAR(200), game_resume VARCHAR(500), game_commentary VARCHAR(300), game_note INTEGER , category_name, FOREIGN KEY (category_name) REFERENCES categories(category_name))"
+    "CREATE TABLE IF NOT EXISTS games (game_id INTEGER PRIMARY KEY AUTOINCREMENT, game_name VARCHAR(50) UNIQUE, game_img VARCHAR(200), game_resume VARCHAR(500), game_commentary VARCHAR(300), game_note INTEGER , category_name, FOREIGN KEY (category_name) REFERENCES categories(category_name), gotm INTEGER)"
   );
 
   db.run(
-    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name) VALUES (?,?,?,?,?,?)",
+    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name, gotm) VALUES (?,?,?,?,?,?,?)",
     "Super Smash Bros : Ultimate",
     "images/SSBU.png",
     "Super Smash Bros Ultimate is a Fighting game on Switch. This Ultimate opus brings together all the fighters already appeared in the history of Super Smash Bros. 75 playable characters will be available by counting the trainer, as well as all his Pokémon...",
     "I feel the same way as with Melee during my childhood. The game is complete, beautiful, funny addictive and fun to play. The OST is masterful, the game modes are legion, the characters are all there, and just the game out there is already announced a new! In short, whether you are a neophyte or a regular, go for it because in both cases you will not regret your purchase. This is THE Switch game of the year.",
     16.2,
-    "Fighting"
+    "Fighting",
+    1
   );
 
   db.run(
-    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name) VALUES (?,?,?,?,?,?)",
+    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name, gotm) VALUES (?,?,?,?,?,?,?)",
     "The Last of Us",
     "images/TLOU.jpg",
     "The survival action The Last of Us on PS3 follows Joel and Ellie across the United States. The two will have to help each other to survive a mysterious plague. Nature begins to appropriate the abandoned cities and the few survivors kill each other to recover the little food and weapons still present.",
     "The Last of Us is a must have on PS3. Innovative, the atmosphere is superb. Endearing characters, a narrative very well built. The stress is at the rendezvous knowing that we must manage its ammunition sparingly.",
     16.8,
-    "Action"
+    "Action",
+    1
   );
 
   db.run(
-    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name) VALUES (?,?,?,?,?,?)",
+    "INSERT INTO games (game_name, game_img, game_resume, game_commentary, game_note, category_name, gotm) VALUES (?,?,?,?,?,?,?)",
     "League of Legends",
     "images/LOL.jpg",
     "League of Legends is a MOBA, a multiplayer online battle arena. In the classic mode, two teams of five players compete in games that last on average between 40 minutes and the goal is to destroy the enemy base. Playing in a hero-fantasy universe, each player embodies a different champion, with unique abilities, which he chooses at the beginning of the game. Random modes are also present, as well as seasonal events that bring a breath of novelty.",
     "A very good game in F2P, everything is graphic, strategy, number of characters ... But unfortunately, the experience is not always happy, the fault of an absolutely disastrous community: in addition to insults and intolerance it is forbidden to be a beginner to this game ... It reminds me of a well-known MMO but this is another story.",
     15.7,
-    "MOBA"
+    "MOBA",
+    1
   );
 
   db.run("INSERT INTO categories (category_name) VALUES (?)", "Action");
